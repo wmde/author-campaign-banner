@@ -1,0 +1,15 @@
+# Authors Campaign
+[authors]
+campaign_tracking = "authors-ba-180503"
+preview_link = "/wiki/Wikipedia:Hauptseite?useskin=minerva&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
+wrapper_template = "wikipedia_org"
+
+[authors.banners.ctrl]
+filename = "./authors/banner_ctrl.js"
+pagename = "B18WMDE_authors_01_180503_ctrl"
+tracking = "WMDE_2018_sprbt1"
+
+[authors.banners.var]
+filename = "./authors/banner_var.js"
+pagename = "B18WMDE_authors_01_180503_var"
+tracking = "WMDE_2018_sprbt2"
