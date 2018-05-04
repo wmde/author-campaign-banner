@@ -1,7 +1,7 @@
 # Authors Campaign
 [authors]
 campaign_tracking = "authors-ba-180503"
-preview_link = "/wiki/Wikipedia:Hauptseite?useskin=minerva&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
+preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
 wrapper_template = "wikipedia_org"
 
 [authors.banners.ctrl]
