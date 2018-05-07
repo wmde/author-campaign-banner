@@ -5,6 +5,7 @@
 		"selector-max-id": 0,
 		"declaration-no-important": null,
 		"function-url-quotes": [ "always" ],
-		"color-hex-length": [ "long" ]
+		"color-hex-length": [ "long" ],
+		"function-url-no-scheme-relative": null
 	}
 }
