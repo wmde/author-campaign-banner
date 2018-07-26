@@ -1,7 +1,7 @@
 :root {
-	--banner-color-green: #3b9b7d;
-	--banner-color-green-light: #40ad90;
-	--banner-color-green-dark: #25967d;
+	--banner-color-primary: #0d6798;
+	--banner-color-primary-dark: #105277;
+	--banner-color-primary-darker: #0d4260;
 	--banner-color-white: #ffffff;
 }
 
@@ -9,16 +9,16 @@
  Common rules, mobile-first
  */
 .author-banner {
-	position: fixed;
 	z-index: 101;
 	width: 100%;
-	background-color: var( --banner-color-green );
+	background-color: var( --banner-color-primary );
 	text-align: center;
 	overflow: hidden;
 	height: 140px;
 	min-width: 320px;
 	box-shadow: 0 3px 5px rgba( 0, 0, 0, 0.5 );
 	display: none;
+	position: relative;
 	&-inner {
 		display: flex;
 		flex-direction: column;
@@ -28,48 +28,58 @@
 	}
 	&-title {
 		height: 50%;
-		font-size: 1.1em;
-		padding: 15px 5% 0;
+		font-size: 20px;
+		padding: 20px 5% 0;
 		display: block;
 		text-align: left;
 		vertical-align: top;
 		font-weight: bold;
 		&-inner {
 			float: left;
-			width: 250px;
-
+			width: 320px;
+		}
+		&-long {
+			font-size: 18px;
+		}
+		&-question {
+			font-size: 10px;
+			text-transform: uppercase;
+			color: var( --banner-color-primary-darker );
+			width: 100%;
+			position: absolute;
+			left: 5%;
+			top: 6px;
 		}
 	}
 	&-image {
-		width: 132px;
+		width: 100px;
 		position: absolute;
 		right: 0;
-		bottom: 0;
+		bottom: -5px;
 		&-inner {
-			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/7/70/WMDE_banner_new_editors_spring_2018-320.png' ) no-repeat center center;
-			width: 132px;
-			height: 111px;
-			z-index: -1;
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/b/b9/320-WIKI-FAQ-Banner_Icon.png' ) no-repeat center center;
+			width: 110px;
+			height: 100px;
+			z-index: 1;
 			display: inline-block;
-			vertical-align: top;
 		}
 	}
 	&-button {
-		color: var( --banner-color-green );
+		color: var( --banner-color-primary-darker );
 		background-color: var( --banner-color-white );
-		padding: 2px;
+		box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.25 );
+		padding: 12px;
 		display: inline-block;
-		border-radius: 2px;
+		border-radius: 45px;
 		text-align: left;
-		margin: 0 0 0 5%;
+		margin: 0 0 10px 5%;
 		float: left;
-		font-size: 0.7em;
-		width: 150px;
+		font-size: 13px;
+		width: auto;
 		&-inner {
 			font-weight: bold;
-			padding: 0.65em 0.65em 0.65em 0.1em;
 			display: inline-block;
-			&:before {
+			&:after {
 				content: '\2192';
 			}
 		}
@@ -113,45 +123,67 @@
 /*
  Tablet and larger devices
  */
-@media ( min-width: 600px ) {
+@media ( min-width: 750px ) {
 	.author-banner {
-		background: linear-gradient( to right, var( --banner-color-green-light ), var( --banner-color-green-dark ) );
-		height: 120px;
+		background: var( --banner-color-primary-dark );
+		height: 140px;
 		&-inner {
 			flex-direction: row;
 		}
 		&-title {
+			background: var( --banner-color-primary );
 			flex: 1 1 40%;
-			font-size: 19px;
-			display: inline-block;
+			font-size: 20px;
 			height: 100%;
-			padding: 0 15px;
+			padding: 20px 0;
 			position: relative;
 			width: 40%;
 			box-sizing: border-box;
 			margin: 0;
+			&-long {
+				font-size: 17px;
+			}
+			&-wrapper {
+				float: right;
+				flex-wrap: wrap;
+				display: flex;
+				width: auto;
+			}
 			&-inner {
 				float: right;
 				width: auto;
-				height: 100%;
+				height: 50%;
 				justify-content: center;
 				display: flex;
 				flex-direction: column;
+				position: absolute;
+				padding: 0 20px 0 0;
+				right: 0;
+				bottom: 30px;
+			}
+			&-question {
+				font-size: 15px;
+				text-transform: uppercase;
+				width: 100%;
+				position: absolute;
+				left: 0;
+				top: -12px;
 			}
 		}
 		&-image {
-			width: 170px;
-			flex: 0 0 170px;
+			background: linear-gradient( to right, var( --banner-color-primary ), var( --banner-color-primary-dark ) );
+			width: 185px;
+			flex: 0 0 185px;
 			position: relative;
 			right: initial;
 			bottom: initial;
 			&-inner {
 				position: relative;
 				background-size: contain;
-				background-image: url( '//upload.wikimedia.org/wikipedia/commons/4/42/WMDE_banner_new_editors_spring_2018-600.png' );
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/b/b3/1200-WIKI-FAQ-Banner_Icon_1%404x.png' );
 				width: 100%;
 				height: 180px;
-				top: -30px;
+				top: -20px;
 				margin: 0;
 				right: 0;
 			}
@@ -160,38 +192,19 @@
 			box-sizing: border-box;
 			line-height: 1.4;
 			height: 100%;
-			padding: 10px 10px;
-			width: 200px;
-			font-size: 14px;
+			padding: 15px 25px;
+			font-size: 16px;
 			&-wrapper {
 				flex: 1 1 40%;
 				width: 40%;
-				height: 56px;
-				margin: 30px 0;
+				height: 75px;
+				margin: 35px 0;
 			}
 			&-inner {
 				font-weight: bold;
 				padding: 0;
 				display: inline-block;
-				float: right;
 			}
-		}
-	}
-}
-
-/*
- Handling edge case of devices between 600px - 700px
- */
-@media ( min-width: 600px ) and ( max-width: 700px ) {
-	.author-banner {
-		&-title {
-			font-size: 17px;
-			padding: 0 5px;
-		}
-		&-button {
-			width: 185px;
-			margin: 0 0 0 0.6em;
-			font-size: 13px;
 		}
 	}
 }
@@ -201,9 +214,16 @@
  */
 @media ( min-width: 1200px ) {
 	.author-banner {
-		height: 150px;
+		height: 170px;
 		&-title {
-			font-size: 29px;
+			font-size: 33px;
+			&-question {
+				font-size: 20px;
+				top: -22px;
+			}
+			&-long {
+				font-size: 28px;
+			}
 		}
 		&-inner {
 			padding-top: 0;
@@ -212,17 +232,16 @@
 			width: 272px;
 			flex: 0 0 272px;
 			&-inner {
-				top: -25px;
-				background-image: url( '//upload.wikimedia.org/wikipedia/commons/7/72/WMDE_banner_new_editors_spring_2018-1200.png' );
+				top: -5px;
+				height: 180px;
 			}
 		}
 		&-button {
-			padding: 15px 25px;
-			width: 240px;
-			font-size: 15px;
+			padding: 20px 25px;
+			font-size: 23px;
 			&-wrapper {
-				height: 70px;
-				margin: 40px 0;
+				height: 100px;
+				margin: 35px 0;
 			}
 		}
 	}

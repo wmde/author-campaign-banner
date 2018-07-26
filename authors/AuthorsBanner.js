@@ -1,13 +1,17 @@
+import { EventLoggingTracker } from './EventLoggingTracker';
+
 export class AuthorsBanner {
 
 	constructor( bannerName, bannerTemplate ) {
-		this.bannerName = bannerName;
+		this.bannerCloseTrackRatio = 0.01;
+		this.trackingEvents = new EventLoggingTracker( bannerName );
 		this.bannerTemplate = bannerTemplate;
 	}
 
 	init() {
 		const pageName = mw.config.get( 'wgPageName' );
-		if ( pageName !== 'Wikipedia:Wikimedia_Deutschland/LerneWikipedia' ) {
+		if ( pageName !== 'Wikipedia:Wikimedia_Deutschland/Neue_Ehrenamtliche/FAQ' &&
+			pageName !== 'Wikipedia:Wikimedia_Deutschland/LerneWikipedia' ) {
 			this.createBanner();
 			this.registerClickEvents();
 		} else {
@@ -30,14 +34,11 @@ export class AuthorsBanner {
 
 	registerClickEvents() {
 		let bannerInstance = this;
+		this.trackingEvents.trackClickEvent( $( '#author-banner-close-button' ), 'banner-closed', this.bannerCloseTrackRatio );
+
 		$( '.author-banner-close' ).click( function () {
-			if ( Math.random() < 0.01 ) {
-				$( '#author-banner-close-tracking' ).attr( 'src', 'https://tracking.wikimedia.de/piwik.php?idsite=1&url=https://spenden.wikimedia.de/banner-closed/' + this.bannerName + '&rec=1' );
-			}
 			bannerInstance.removeBanner();
 			mw.centralNotice.hideBanner();
-
-			return false;
 		} );
 
 		$( '#ca-ve-edit, .mw-editsection-visualeditor' ).click( function () {
@@ -52,7 +53,6 @@ export class AuthorsBanner {
 			case 'vector': {
 				$( '#mw-panel' ).css( 'top', bannerHeight );
 				$( '#mw-head' ).css( 'top', bannerHeight );
-				$( '#mw-page-base' ).css( 'padding-top', bannerHeight );
 				break;
 			}
 			case 'monobook': {

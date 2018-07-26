@@ -54,8 +54,8 @@ The `campaign_tracking` and `tracking` parameters in `campaign_info.toml` are us
 ### Creating A/B tests
 The changes to the code depend on which kind of test you are running.
 
-* If you test **different behavior**, change `banner_var.js` as needed. Override library functions with our own versions if need be.
-* If you test **style changes**, include a file named `css/styles_var.pcss` in your `banner_var.js`. That file should only contain the overriding changes.
+* If you test **different behavior**, change the `banner0X.js` as needed. Override library functions with our own versions if need be.
+* If you test **style changes**, include a file named `css/styles0X.pcss` in your `banner0X.js`. That file should only contain the overriding changes.
 * If you test **text or markup changes**, duplicate the necessary templates in the `templates` directory.
 * If you test a **whole new banner design**, all of the above changes might apply.
 
