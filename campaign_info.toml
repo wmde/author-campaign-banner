@@ -1,20 +1,21 @@
 # Authors Campaign
 [authors]
-campaign_tracking = "WMDE_neweditors_summer2018"
+campaign_tracking = "WMDE_neweditors_autumn_2018"
 preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
 wrapper_template = "wikipedia_org"
 
-[authors.banners.one]
-filename = "./authors/banner01.js"
-pagename = "B18WMDE_authors_02_180801_one"
-tracking = "WMDE_neweditors_summer2018_1"
+[authors.banners.autumn]
+filename = "./authors/banner.js"
+pagename = "B18WMDE_neweditors_autumn_2018_lp1"
+tracking = "WMDE_neweditors_autumn_2018_lp1"
 
-[authors.banners.two]
-filename = "./authors/banner02.js"
-pagename = "B18WMDE_authors_02_180801_two"
-tracking = "WMDE_neweditors_summer2018_2"
+# Authors Campaign Mobile for easily testing mobile view
+[authors_mobile]
+campaign_tracking = "WMDE_neweditors_autumn_2018"
+preview_link = "/wiki/Wikipedia:Hauptseite?useskin=minerva&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
+wrapper_template = "wikipedia_org"
 
-[authors.banners.three]
-filename = "./authors/banner03.js"
-pagename = "B18WMDE_authors_02_180801_three"
-tracking = "WMDE_neweditors_summer2018_3"
+[authors_mobile.banners.autumn]
+filename = "./authors/banner.js"
+pagename = "B18WMDE_neweditors_autumn_2018_lp1_mobile"
+tracking = "WMDE_neweditors_autumn_2018_lp1_mobile"
