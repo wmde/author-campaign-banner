@@ -50,7 +50,7 @@ export class AuthorsBanner {
 	}
 
 	addBannerSpace() {
-		const bannerHeight = $( '#author-banner-container' ).height() + 20;
+		const bannerHeight = $( '#author-banner-container' ).height();
 		switch ( mw.config.get( 'skin' ) ) {
 			case 'vector': {
 				$( '#mw-panel' ).css( 'top', bannerHeight );
