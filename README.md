@@ -1,6 +1,6 @@
-# Author Campaign banners, webpack edition
+# Community banners, webpack edition
 
-[![Build Status](https://travis-ci.org/wmde/author-campaign-banner.svg?branch=master)](https://travis-ci.org/wmde/author-campaign-banner)
+[![Build Status](https://travis-ci.org/wmde/community-banners.svg?branch=master)](https://travis-ci.org/wmde/community-banners)
 
 This project is bundling all assets and dependencies of WMDE author campaign banners with webpack.
 
