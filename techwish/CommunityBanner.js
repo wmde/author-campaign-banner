@@ -64,6 +64,16 @@ export class CommunityBanner {
 				banner.css( 'background', 'none' );
 				break;
 			}
+			case 'timeless': {
+				$( '#mw-header-container' ).css( {
+					position: 'relative'
+				} );
+				$( '#mw-header-hack' ).css( {
+					position: 'relative',
+					top: 0
+				} );
+				$( '#mw-content-container' ).css( 'margin-top', '0' );
+			}
 		}
 	}
 
