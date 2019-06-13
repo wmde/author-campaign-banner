@@ -48,7 +48,7 @@ export class CommunityBanner {
 	}
 
 	addBannerSpace() {
-		const bannerHeight = $( '#banner-container' ).height() + 20;
+		const bannerHeight = $( '#banner-container' ).height();
 		switch ( mw.config.get( 'skin' ) ) {
 			case 'vector': {
 				$( '#mw-panel' ).css( 'top', bannerHeight );
