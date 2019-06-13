@@ -21,8 +21,8 @@ export class CommunityBanner {
 	createBanner() {
 		const $bannerContainer = $( '#WMDE-Banner-Container' );
 		$bannerContainer.html( this.bannerTemplate( {} ) );
-		this.addBannerSpace();
 		$( 'body' ).prepend( $( '#centralNotice' ) );
+		this.addBannerSpace();
 		$( '#banner-container' ).show();
 		$( window ).resize( this.addBannerSpace );
 	}
