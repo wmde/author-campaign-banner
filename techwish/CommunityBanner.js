@@ -59,9 +59,8 @@ export class CommunityBanner {
 				const wrapper = $( '#globalWrapper' );
 				const banner = $( '#banner-container' );
 				wrapper.css( 'position', 'relative' );
-				wrapper.css( 'top', bannerHeight );
-				banner.css( 'top', '-20px' );
 				banner.css( 'background', 'none' );
+				$( 'div#centralNotice > *' ).attr( 'style', 'margin-top: 0 !important' );
 				break;
 			}
 			case 'timeless': {
@@ -90,6 +89,16 @@ export class CommunityBanner {
 				wrapper.css( 'position', 'relative' );
 				wrapper.css( 'top', 0 );
 				break;
+			}
+			case 'timeless': {
+				$( '#mw-header-container' ).css( {
+					position: 'fixed'
+				} );
+				$( '#mw-header-hack' ).css( {
+					position: 'fixed',
+					top: '3.125em'
+				} );
+				$( '#mw-content-container' ).css( 'margin-top', '3.125em' );
 			}
 		}
 	}
