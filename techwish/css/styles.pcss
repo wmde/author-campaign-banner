@@ -17,6 +17,7 @@
 		flex-wrap: nowrap;
 		min-height: 160px;
 		text-decoration: none;
+		margin-bottom: 1em;
 		&:hover,
 		&:active,
 		&:visited {
@@ -53,6 +54,7 @@
 			flex: 1 1 50%;
 			padding: 10px 0;
 			white-space: pre-line;
+			text-align: left;
 			> span {
 				display: inline-block;
 			}
@@ -110,6 +112,7 @@
 	.banner {
 		&-wrapper {
 			min-height: 240px;
+			margin-bottom: 1.5em;
 		}
 		&-text {
 			&-content {
@@ -137,8 +140,28 @@
 			}
 		}
 	}
+
+	.skin-monobook .community-banner {
+		margin-bottom: -0.75em;
+		margin-top: -0.5em
+	}
 }
 
-.skin-monobook .banner-wrapper {
-	font-size: 140%;
+.skin-monobook {
+
+	.banner-wrapper {
+		font-size: 140%;
+	}
+
+	.community-banner {
+		margin-left: -0.9em;
+		margin-right: -0.9em;
+		margin-bottom: -0.25em;
+		margin-top: -0.75em
+	}
+}
+
+.skin-timeless .banner-close {
+	right: 2em;
+	top: 1.75em;
 }
