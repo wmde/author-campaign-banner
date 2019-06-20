@@ -26,7 +26,6 @@
 		}
 	}
 	&-logo-wrapper {
-		flex: 1 1 180px;
 		padding: 0 10px;
 		text-align: center;
 		display: flex;
@@ -44,7 +43,7 @@
 			width: 100%;
 		}
 		&-content {
-			font: 13px/16px sans-serif;
+			font: 14px/17px sans-serif;
 			width: 100%;
 		}
 		&-wrapper {
@@ -52,8 +51,7 @@
 			justify-content: center;
 			flex-direction: column;
 			flex: 1 1 50%;
-			padding: 10px 0;
-			white-space: pre-line;
+			padding: 10px 30px 10px 0;
 			text-align: left;
 			> span {
 				display: inline-block;
@@ -105,52 +103,16 @@
 	}
 }
 
-/*
- Tablet and larger devices
- */
-@media ( min-width: 1050px ) {
-	.banner {
-		&-wrapper {
-			min-height: 240px;
-			margin-bottom: 1.5em;
-		}
-		&-text {
-			&-content {
-				font: 16px/22px sans-serif;
-			}
-			&-headline {
-				font: bold 28px/34px sans-serif;
-			}
-		}
-		&-button {
-			font-size: 16px;
-			padding: 10px;
-			margin-top: 20px;
-		}
-		&-logo-wrapper {
-			> img {
-				height: 180px;
-				width: 230px;
-			}
-		}
-		&-image-wrapper {
-			> img {
-				height: 180px;
-				width: 130px;
-			}
-		}
-	}
-
-	.skin-monobook .community-banner {
-		margin-bottom: -0.75em;
-		margin-top: -0.5em
-	}
-}
-
 .skin-monobook {
 
-	.banner-wrapper {
-		font-size: 140%;
+	.banner-text{
+		&-headline {
+			font-size: 150%;
+		}
+
+		&-content {
+			font-size: 105%;
+		}
 	}
 
 	.community-banner {
