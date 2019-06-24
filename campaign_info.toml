@@ -19,3 +19,14 @@ wrapper_template = "wikipedia_org"
 filename = "./authors/banner_mobile.js"
 pagename = "B18WMDE_neweditors_autumn_2018_lp1m"
 tracking = "WMDE_neweditors_autumn_2018_lp1m"
+
+# Techwish Campaign
+[techwish]
+campaign_tracking = "WMDE_techwish_voting_2019"
+preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
+wrapper_template = "wikipedia_org"
+
+[techwish.banners.main]
+filename = "./techwish/main.js"
+pagename = "B18WMDE_techwish_voting_01_190617_main"
+tracking = "WMDE_techwish_voting_2019_main"
