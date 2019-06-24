@@ -10,8 +10,10 @@ export class AuthorsBanner {
 
 	init() {
 		const pageName = mw.config.get( 'wgPageName' );
-		if ( pageName !== 'Wikipedia:Wikimedia_Deutschland/Neue_Ehrenamtliche/FAQ' &&
-			pageName !== 'Wikipedia:Wikimedia_Deutschland/LerneWikipedia' ) {
+		if ( pageName.indexOf( 'Wikipedia:Wikipedia_vor_Ort' ) === -1 &&
+			pageName.indexOf( 'Aktionstag' ) === -1 &&
+			pageName !== 'Wikipedia:Wikimedia_Deutschland/LerneWikipedia' &&
+			pageName !== 'Wikipedia:Spezial:Benutzerkonto_anlegen' ) {
 			this.createBanner();
 			this.registerClickEvents();
 		} else {
@@ -48,7 +50,7 @@ export class AuthorsBanner {
 	}
 
 	addBannerSpace() {
-		const bannerHeight = $( '#author-banner-container' ).height() + 20;
+		const bannerHeight = $( '#author-banner-container' ).height();
 		switch ( mw.config.get( 'skin' ) ) {
 			case 'vector': {
 				$( '#mw-panel' ).css( 'top', bannerHeight );
