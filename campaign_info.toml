@@ -1,32 +1,21 @@
 # Authors Campaign
 [authors]
-campaign_tracking = "WMDE_neweditors_autumn_2018"
+campaign_tracking = "WMDE_neweditors_autumn_2019"
 preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
 wrapper_template = "wikipedia_org"
 
 [authors.banners.autumn]
 filename = "./authors/banner.js"
-pagename = "B18WMDE_neweditors_autumn_2018_lp1"
-tracking = "WMDE_neweditors_autumn_2018_lp1"
+pagename = "B19WMDE_neweditors_autumn_2019_lp1"
+tracking = "WMDE_neweditors_autumn_2019_lp1"
 
 # Authors Campaign Mobile for easily testing mobile view
 [authors_mobile]
-campaign_tracking = "WMDE_neweditors_autumn_2018m"
+campaign_tracking = "WMDE_neweditors_autumn_2019m"
 preview_link = "/wiki/Wikipedia:Hauptseite?useskin=minerva&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
 wrapper_template = "wikipedia_org"
 
 [authors_mobile.banners.autumn]
 filename = "./authors/banner_mobile.js"
-pagename = "B18WMDE_neweditors_autumn_2018_lp1m"
-tracking = "WMDE_neweditors_autumn_2018_lp1m"
-
-# Techwish Campaign
-[techwish]
-campaign_tracking = "WMDE_techwish_voting_2019"
-preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
-wrapper_template = "wikipedia_org"
-
-[techwish.banners.main]
-filename = "./techwish/main.js"
-pagename = "B18WMDE_techwish_voting_01_190617_main"
-tracking = "WMDE_techwish_voting_2019_main"
+pagename = "B19WMDE_neweditors_autumn_2019_lp1m"
+tracking = "WMDE_neweditors_autumn_2019_lp1m"

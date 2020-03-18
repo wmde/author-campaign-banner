@@ -1,7 +1,8 @@
 export class EventLoggingTracker {
 
-	constructor( bannerName ) {
+	constructor( bannerName, impressionCounter ) {
 		this.bannerName = bannerName;
+		this.impressionCounter = impressionCounter;
 	}
 
 	/**
@@ -29,10 +30,10 @@ export class EventLoggingTracker {
 
 		return () => {
 			if ( Math.random() < trackingRatio ) {
-				mw.track( 'event.WMDEBannerEvents', {
+				mw.track( 'event.WMDEBannerInteractions', {
 					bannerName: this.bannerName,
 					bannerAction: actionName,
-					eventRate: trackingRatio
+					bannerImpressions: this.impressionCounter.getImpressionCount()
 				} );
 			}
 		};

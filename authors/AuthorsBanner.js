@@ -1,10 +1,12 @@
 import { EventLoggingTracker } from './EventLoggingTracker';
+import { LocalImpressionCount } from './LocalImpressionCount';
 
 export class AuthorsBanner {
 
 	constructor( bannerName, bannerTemplate ) {
 		this.bannerCloseTrackRatio = 0.01;
-		this.trackingEvents = new EventLoggingTracker( bannerName );
+		this.impCount = new LocalImpressionCount( bannerName );
+		this.trackingEvents = new EventLoggingTracker( bannerName, this.impCount );
 		this.bannerTemplate = bannerTemplate;
 	}
 
@@ -27,6 +29,7 @@ export class AuthorsBanner {
 		this.addBannerSpace();
 		$( 'body' ).prepend( $( '#centralNotice' ) );
 		$( '#author-banner-container' ).show();
+		this.impCount.incrementImpressionCount();
 	}
 
 	removeBanner() {
@@ -36,9 +39,11 @@ export class AuthorsBanner {
 
 	registerClickEvents() {
 		let bannerInstance = this;
-		this.trackingEvents.trackClickEvent( $( '#author-banner-close-button' ), 'banner-closed', this.bannerCloseTrackRatio );
+		let closeButton = $( '.author-banner-close' );
+		this.trackingEvents.trackClickEvent( closeButton, 'banner-closed', this.bannerCloseTrackRatio );
+		this.trackingEvents.trackClickEvent( $( '#author-banner-link' ), 'banner-clicked', this.bannerCloseTrackRatio );
 
-		$( '.author-banner-close' ).click( function () {
+		closeButton.click( function () {
 			bannerInstance.removeBanner();
 			mw.centralNotice.hideBanner();
 		} );
