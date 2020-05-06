@@ -8,13 +8,13 @@ This project is bundling all assets and dependencies of WMDE author campaign ban
 
 To install all dependencies run
 
-    docker-compose run js-build npm install
+    make setup
 
 ## Starting the preview
 
 The banners can be previewed using a built-in server.
 
-    docker-compose up js-serve
+    make server
 
 The preview server is at [http://localhost:8085/](http://localhost:8085/)
 
@@ -26,15 +26,13 @@ Changes to the code base while the preview is running should be reflected via ho
 
 To verify the code is correct and up to our coding standards. These tests will also be run, and have to pass, in CI.
 
-    docker-compose run js-build npm run test
-    docker-compose run js-build npm run lint:js
-    docker-compose run js-build npm run lint:css
+    make ci
 
 ## Building the assets
 
 To build a minified version of the banner in order to use it on CentralNotice run
 
-    docker-compose run js-build npm run build
+    make build
 
 ## Using the compiled JavaScript on CentralNotice
 
