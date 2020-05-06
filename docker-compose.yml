@@ -2,7 +2,7 @@ version: '2'
 
 services:
   js-build:
-    image: digitallyseamless/nodejs-bower-grunt
+    image: node:14
     volumes:
       - ./:/code
       - ~/.npm:/npm-cache
