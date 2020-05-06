@@ -1,6 +1,7 @@
 const Merge = require( 'webpack-merge' );
 const CommonConfig = require( './webpack.common.js' );
 const webpack = require( 'webpack' );
+const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 
 module.exports = Merge( CommonConfig, {
 	plugins: [
@@ -12,15 +13,21 @@ module.exports = Merge( CommonConfig, {
 			'process.env': {
 				NODE_ENV: JSON.stringify( 'production' )
 			}
-		} ),
-		new webpack.optimize.UglifyJsPlugin( {
-			beautify: false,
-			mangle: {
-				screw_ie8: true,
-				keep_fnames: true,
-				except: [ '$', 'exports', 'require' ]
-			},
-			comments: false
 		} )
-	]
+	],
+	optimization: {
+		minimizer: [ new UglifyJsPlugin( {
+			uglifyOptions: {
+				mangle: {
+					ie8: false,
+					keep_fnames: true,
+					reserved: [ '$', 'exports', 'require' ]
+				},
+				output: {
+					beautify: false,
+					comments: false
+				}
+			}
+		} ) ]
+	}
 } );

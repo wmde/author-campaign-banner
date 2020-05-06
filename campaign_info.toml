@@ -19,3 +19,19 @@ wrapper_template = "wikipedia_org"
 filename = "./authors/banner_mobile.js"
 pagename = "B19WMDE_neweditors_autumn_2019_lp1m"
 tracking = "WMDE_neweditors_autumn_2019_lp1m"
+
+# Occasional Editors Campaign
+[occasional]
+campaign_tracking = "WMDE_oceditors_spring_2020"
+preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
+wrapper_template = "wikipedia_org"
+
+[occasional.banners.ctrl]
+filename = "./occasional_editors/banner_ctrl.js"
+pagename = "B20WMDE_oceditors_spring_2020_ctrl"
+tracking = "WMDE_oceditors_spring_2020_ctrl"
+
+[occasional.banners.var]
+filename = "./occasional_editors/banner_var.js"
+pagename = "B20WMDE_oceditors_spring_2020_var"
+tracking = "WMDE_oceditors_spring_2020_var"

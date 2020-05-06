@@ -22,6 +22,6 @@ export class LocalImpressionCount {
 		if ( !window.localStorage ) {
 			return 0;
 		}
-		return window.localStorage.getItem( this.itemName );
+		return parseInt( window.localStorage.getItem( this.itemName ) );
 	}
 }

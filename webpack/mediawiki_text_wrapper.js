@@ -29,10 +29,13 @@ MediaWikiTextWrapper.prototype.apply = function ( compiler ) {
 
 			let pagename = filename.replace( /\.js$/, '' );
 			let template = self.templates[ pagename ];
-			wrappedFiles[ filename + '.wikitext' ] = template( Object.assign( {
-				banner: compilation.assets[ filename ].source(),
-				campaignConfig: self.campaignConfig[ pagename ] || {}
-			}, self.context ) );
+
+			if ( typeof template === 'function' ) {
+				wrappedFiles[ filename + '.wikitext' ] = template( Object.assign( {
+					banner: compilation.assets[ filename ].source(),
+					campaignConfig: self.campaignConfig[ pagename ] || {}
+				}, self.context ) );
+			}
 		}
 
 		for ( let filename in wrappedFiles ) {

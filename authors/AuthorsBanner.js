@@ -1,5 +1,5 @@
-import { EventLoggingTracker } from './EventLoggingTracker';
-import { LocalImpressionCount } from './LocalImpressionCount';
+import { EventLoggingTracker } from '../shared/EventLoggingTracker';
+import { LocalImpressionCount } from '../shared/LocalImpressionCount';
 
 export class AuthorsBanner {
 
@@ -40,8 +40,8 @@ export class AuthorsBanner {
 	registerClickEvents() {
 		let bannerInstance = this;
 		let closeButton = $( '.author-banner-close' );
-		this.trackingEvents.trackClickEvent( closeButton, 'banner-closed', this.bannerCloseTrackRatio );
-		this.trackingEvents.trackClickEvent( $( '#author-banner-link' ), 'banner-clicked', this.bannerCloseTrackRatio );
+		this.trackingEvents.bindClickEvent( closeButton[ 0 ], 'banner-closed', this.bannerCloseTrackRatio );
+		this.trackingEvents.bindClickEvent( $( '#author-banner-link' )[ 0 ], 'banner-clicked', this.bannerCloseTrackRatio );
 
 		closeButton.click( function () {
 			bannerInstance.removeBanner();

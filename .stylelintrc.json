@@ -1,7 +1,6 @@
 {
 	"extends": "stylelint-config-wikimedia",
 	"rules": {
-		"selector-no-id": null,
 		"selector-max-id": 0,
 		"declaration-no-important": null,
 		"function-url-quotes": [ "always" ],
