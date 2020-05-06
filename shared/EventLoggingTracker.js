@@ -8,12 +8,15 @@ export class EventLoggingTracker {
 	/**
 	 * Track a click event on a given element
 	 *
-	 * @param {jQuery} $trackedElement The element to bind the click event to
+	 * @param {object} trackedElement The html element to bind the click event to
 	 * @param {string} actionName Name of the action to be tracked
 	 * @param {number} trackRatio The probability of the event being tracked (between 0 and 1)
 	 */
-	trackClickEvent( $trackedElement, actionName, trackRatio ) {
-		$trackedElement.click( this.createTrackHandler( actionName, trackRatio ) );
+	bindClickEvent( trackedElement, actionName, trackRatio ) {
+		trackedElement.addEventListener(
+			'click',
+			this.createTrackHandler( actionName, trackRatio )
+		);
 	}
 
 	/**
@@ -33,9 +36,21 @@ export class EventLoggingTracker {
 				mw.track( 'event.WMDEBannerInteractions', {
 					bannerName: this.bannerName,
 					bannerAction: actionName,
-					bannerImpressions: this.impressionCounter.getImpressionCount()
+					bannerImpressions: this.impressionCounter.getImpressionCount(),
+					userID: mw.user.getId()
 				} );
 			}
 		};
+	}
+
+	trackSeenEvent( trackingRatio ) {
+		if ( Math.random() < trackingRatio ) {
+			mw.track( 'event.WMDEBannerInteractions', {
+				bannerName: this.bannerName,
+				bannerAction: 'banner-seen',
+				bannerImpressions: this.impressionCounter.getImpressionCount(),
+				userID: mw.user.getId()
+			} );
+		}
 	}
 }
