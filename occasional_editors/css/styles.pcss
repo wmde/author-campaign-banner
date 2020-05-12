@@ -1,10 +1,254 @@
-.occasional-banner {
-	display: none;
-	background: #983c18;
-	color: #ffffff;
-	padding: 50px;
+:root {
+	--banner-color-primary: #ff9a50;
+	--banner-color-secondary: #ffffff;
+	--banner-color-outline: #919191;
+	--banner-color-black: #000000;
+}
 
+/*
+ Common rules, mobile-first
+ */
+.occasional-banner {
+	z-index: 101;
+	width: 100%;
+	background-color: var( --banner-color-primary );
+	text-align: center;
+	overflow: hidden;
+	height: 400px;
+	display: none;
+	position: relative;
 	a {
-		color: #8a8a28;
+		text-decoration: none;
+	}
+	.mobile-break {
+		display: block;
+	}
+	&-inner {
+		box-sizing: border-box;
+		height: 100%;
+		text-align: left;
+		width: 100%;
+	}
+	&-space {
+		width: 100%;
+		height: 25px;
+	}
+	&-title {
+		background: transparent url( '//upload.wikimedia.org/wikipedia/commons/0/02/Danke-s%402x.png' ) no-repeat center left;
+		background-size: contain;
+		width: 233px;
+		height: 72px;
+		margin-left: 25px;
+		margin-top: 0;
+	}
+	&-banner {
+		background: transparent url( '//upload.wikimedia.org/wikipedia/commons/4/47/Banner3-s%402x.png' ) no-repeat center left;
+		background-size: contain;
+		width: 263px;
+		height: 119px;
+		margin-left: 25px;
+		margin-top: 33px;
+	}
+	&-illustration {
+		position: absolute;
+		left: 0;
+		right: unset;
+		bottom: 24px;
+		background: transparent url( '//upload.wikimedia.org/wikipedia/commons/a/a1/Illustration-s%402x.png' ) no-repeat bottom left;
+		background-size: contain;
+		width: 180px;
+		height: 110px;
+	}
+	&-button {
+		position: absolute;
+		right: 14px;
+		bottom: 37px;
+		background: transparent url( '//upload.wikimedia.org/wikipedia/commons/9/9c/Button2-s%402x.png' ) no-repeat center center;
+		background-size: contain;
+		width: 146px;
+		height: 60px;
+	}
+	&-close {
+		background: transparent url( '//upload.wikimedia.org/wikipedia/commons/b/b7/Close%402x.png' ) no-repeat center/60%;
+		background-size: contain;
+		cursor: pointer;
+		position: absolute;
+		z-index: 1002;
+		width: 30px;
+		height: 30px;
+		right: 25px;
+		top: 25px;
+		a {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+		}
+	}
+
+	&-cs {
+		.occasional-banner-banner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/5/5a/Banner1-s%402x.png' );
+		}
+	}
+
+	&-nt {
+		.occasional-banner-banner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/7/70/Banner2-s%402x.png' );
+		}
+		.occasional-banner-button {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/2/27/Button1-s%402x.png' );
+		}
+	}
+
+	&-all {
+		.occasional-banner-banner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/4/47/Banner3-s%402x.png' );
+		}
+	}
+}
+
+/*
+ Tablet and larger devices
+ */
+@media ( min-width: 600px ) {
+	.occasional-banner {
+		height: 390px;
+
+		&-space {
+			width: 100%;
+			height: 30px;
+		}
+		&-title {
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/8/81/Danke-m%402x.png' ) no-repeat center left;
+			background-size: contain;
+			width: 360px;
+			height: 52px;
+			margin-left: 30px;
+		}
+		&-banner {
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/f/f9/Banner3-m%402x.png' ) no-repeat center left;
+			background-size: contain;
+			width: 435px;
+			height: 110px;
+			margin-left: 30px;
+			margin-top: 38px;
+		}
+		&-illustration {
+			bottom: 0;
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/1/15/Illustration-m%402x.png' ) no-repeat bottom left;
+			background-size: contain;
+			width: 330px;
+			height: 138px;
+		}
+		&-button {
+			right: 27px;
+			bottom: 31px;
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/c/ca/Button2-m%402x.png' ) no-repeat center center;
+			background-size: contain;
+			width: 176px;
+			height: 65px;
+		}
+		&-close {
+			right: 30px;
+			top: 30px;
+		}
+
+		&-cs {
+			.occasional-banner-banner {
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/6/65/Banner1-m%402x.png' );
+			}
+		}
+
+		&-nt {
+			.occasional-banner-banner {
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/7/79/Banner2-m%402x.png' );
+			}
+			.occasional-banner-button {
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/e/e3/Button1-m%402x.png' );
+			}
+		}
+
+		&-all {
+			.occasional-banner-banner {
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/f/f9/Banner3-m%402x.png' );
+			}
+		}
+	}
+	.skin-minerva {
+		.occasional-banner {
+			&-text {
+				width: auto;
+			}
+		}
+	}
+}
+
+/*
+ Desktop devices (1200px width and above, minus scroll bar)
+ */
+@media ( min-width: 1200px ) {
+	.occasional-banner {
+		height: 240px;
+
+		&-space {
+			width: 100%;
+			height: 40px;
+		}
+		&-title {
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/c/c3/Danke-l%402x.png' ) no-repeat center left;
+			background-size: contain;
+			width: 808px;
+			height: 30px;
+			margin-left: 40px;
+		}
+		&-banner {
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/5/52/Banner3-l%402x.png' ) no-repeat center left;
+			background-size: contain;
+			width: 692px;
+			height: 79px;
+			margin-left: 40px;
+			margin-top: 50px;
+		}
+		&-illustration {
+			right: 0;
+			left: unset;
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/b/bc/Illustration-l%402x.png' ) no-repeat bottom left;
+			background-size: contain;
+			width: 350px;
+			height: 203px;
+		}
+		&-button {
+			right: 37px;
+			bottom: 33px;
+			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/5/52/Button2-l%402x.png' ) no-repeat center center;
+			background-size: contain;
+			width: 209px;
+			height: 70px;
+		}
+		&-close {
+			right: 40px;
+			top: 40px;
+		}
+
+		&-cs {
+			.occasional-banner-banner {
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/f/ff/Banner1-l%402x.png' );
+			}
+		}
+
+		&-nt {
+			.occasional-banner-banner {
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/4/46/Banner2-l%402x.png' );
+			}
+			.occasional-banner-button {
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/5/51/Button1-l%402x.png' );
+			}
+		}
+
+		&-all {
+			.occasional-banner-banner {
+				background-image: url( '//upload.wikimedia.org/wikipedia/commons/5/52/Banner3-l%402x.png' );
+			}
+		}
 	}
 }

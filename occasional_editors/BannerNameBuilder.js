@@ -1,10 +1,10 @@
 const WINDOW_WIDTHS = [
 	{
-		under: 320,
+		under: 600,
 		device: 'mobile'
 	},
 	{
-		under: 600,
+		under: 1200,
 		device: 'ipad'
 	}
 ];
@@ -29,12 +29,17 @@ export class BannerNameBuilder {
 
 	addDeviceSuffix() {
 		let windowWidth = window.innerWidth;
-		let width = WINDOW_WIDTHS.find( window => window.under < windowWidth );
+		let width = WINDOW_WIDTHS.find( window => windowWidth < window.under );
 
 		if ( width ) {
-			this.suffixes.push( width.device );
+			this.addSuffix( width.device );
 		}
 
+		return this;
+	}
+
+	addSuffix( suffix ) {
+		this.suffixes.push( suffix );
 		return this;
 	}
 

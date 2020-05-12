@@ -30,8 +30,12 @@ if ( !currentUrl.query.devbanner ) {
 	const currentBanner = currentUrl.query.devbanner;
 	const container = $( '#WMDE-Banner-Container' );
 	if ( pages[ currentBanner ] ) {
-		container.data( 'tracking', pages[ currentBanner ].tracking );
-		container.data( 'campaign-tracking', pages[ currentBanner ].campaign_tracking );
+		container.attr( 'data-tracking', pages[ currentBanner ].tracking );
+		container.attr( 'data-campaign-tracking', pages[ currentBanner ].campaign_tracking );
+
+		if ( pages[ currentBanner ].test_flags ) {
+			container.attr( 'data-test-flags', pages[ currentBanner ].test_flags );
+		}
 	}
 }
 
