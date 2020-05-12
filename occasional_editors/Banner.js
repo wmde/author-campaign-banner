@@ -15,6 +15,7 @@ const BANNER_SEEN_TRACK_RATIO = 1;
 export class Banner {
 	name;
 	template;
+	templateVars;
 	bannerId;
 	closeId;
 	linkId;
@@ -31,12 +32,13 @@ export class Banner {
 	head;
 	wrapper;
 
-	constructor( name, template, bannerId, closeId, linkId ) {
+	constructor( name, template, bannerId, closeId, linkId, templateVars = {} ) {
 		this.name = name;
 		this.template = template;
 		this.bannerId = bannerId;
 		this.closeId = closeId;
 		this.linkId = linkId;
+		this.templateVars = templateVars;
 
 		this.localImpressionCount = new LocalImpressionCount( this.name );
 		this.eventLoggingTracker = new EventLoggingTracker( this.name, this.localImpressionCount );
@@ -87,7 +89,7 @@ export class Banner {
 
 	createBanner() {
 		this.bannerContainer = document.getElementById( BANNER_CONTAINER_ID );
-		this.bannerContainer.innerHTML = this.template( {} );
+		this.bannerContainer.innerHTML = this.template( this.templateVars );
 
 		this.getHTMLElements();
 
