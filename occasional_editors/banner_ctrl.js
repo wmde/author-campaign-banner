@@ -2,7 +2,7 @@ require( './css/styles.pcss' );
 
 import { BannerNameBuilder } from './BannerNameBuilder';
 import { TestFlag } from './TestFlag';
-import { getGroupType, getGroupTypeSuffix, GROUP_TYPE_NONE } from './getGroupType';
+import { getGroupType, getGroupTypeSuffix, getGroupBannerText, GROUP_TYPE_NONE } from './getGroupOptions';
 import { Banner } from './Banner';
 import { BANNER_CONTAINER_ID, BANNER_ID, BANNER_NAME_ATTRIBUTE, TEST_FLAG_ATTRIBUTE, CLOSE_BUTTON_ID, LINK_BUTTON_ID } from './config';
 
@@ -37,7 +37,8 @@ $( document ).ready( () => {
 
 	const templateVars = {
 		campaign: bannerName,
-		banner: BANNER_CLASS_PREFIX + groupSuffix
+		banner: BANNER_CLASS_PREFIX + groupSuffix,
+		banner_text: getGroupBannerText( groupType )
 	};
 
 	new Banner(
