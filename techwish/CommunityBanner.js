@@ -2,15 +2,16 @@ import { EventLoggingTracker } from './EventLoggingTracker';
 
 export class CommunityBanner {
 
-	constructor( bannerName, bannerTemplate ) {
+	constructor( bannerName, bannerTemplate, templateVars ) {
 		this.bannerCloseTrackRatio = 0.01;
 		this.trackingEvents = new EventLoggingTracker( bannerName );
 		this.bannerTemplate = bannerTemplate;
+		this.templateVars = templateVars;
 	}
 
 	init() {
 		const pageName = mw.config.get( 'wgPageName' );
-		if ( pageName !== 'Wikipedia:Umfragen/Technische_Wünsche_2019_Themenschwerpunkte' ) {
+		if ( pageName !== 'Wikipedia:Umfragen/Technische_Wünsche_2020_Themenschwerpunkte' ) {
 			this.createBanner();
 			this.registerClickEvents();
 		} else {
@@ -20,7 +21,7 @@ export class CommunityBanner {
 
 	createBanner() {
 		const $bannerContainer = $( '#WMDE-Banner-Container' );
-		$bannerContainer.html( this.bannerTemplate( {} ) );
+		$bannerContainer.html( this.bannerTemplate( this.templateVars ) );
 		$( '#banner-container' ).show();
 
 	}
