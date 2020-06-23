@@ -49,3 +49,14 @@ filename = "./occasional_editors/banner_var.js"
 pagename = "B20WMDE_oceditors_spring_2020_var_b"
 tracking = "WMDE_oceditors_spring_2020_var"
 test_flags = "logged_in|group_b"
+
+# Techwish Campaign
+[techwish]
+campaign_tracking = "WMDE_techwish_voting_2020"
+preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
+wrapper_template = "wikipedia_org"
+
+[techwish.banners.main]
+filename = "./techwish/main.js"
+pagename = "B18WMDE_techwish_voting_01_190617_main"
+tracking = "WMDE_techwish_voting_2020_main"
