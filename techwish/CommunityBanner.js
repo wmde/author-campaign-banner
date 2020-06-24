@@ -1,10 +1,14 @@
-import { EventLoggingTracker } from './EventLoggingTracker';
+import { EventLoggingTracker } from '../shared/EventLoggingTracker';
+import { LocalImpressionCount } from '../shared/LocalImpressionCount';
+
+const BANNER_SEEN_TRACK_RATIO = 1;
+const BANNER_CLOSE_TRACK_RATIO = 1;
 
 export class CommunityBanner {
 
 	constructor( bannerName, bannerTemplate, templateVars ) {
-		this.bannerCloseTrackRatio = 0.01;
-		this.trackingEvents = new EventLoggingTracker( bannerName );
+		this.localImpressionCount = new LocalImpressionCount( bannerName );
+		this.eventLoggingTracker = new EventLoggingTracker( bannerName, this.localImpressionCount );
 		this.bannerTemplate = bannerTemplate;
 		this.templateVars = templateVars;
 	}
@@ -14,6 +18,7 @@ export class CommunityBanner {
 		if ( pageName !== 'Wikipedia:Umfragen/Technische_Wünsche_2020_Themenschwerpunkte' ) {
 			this.createBanner();
 			this.registerClickEvents();
+			this.eventLoggingTracker.trackSeenEvent( BANNER_SEEN_TRACK_RATIO );
 		} else {
 			mw.centralNotice.setBannerLoadedButHidden();
 		}
@@ -23,6 +28,7 @@ export class CommunityBanner {
 		const $bannerContainer = $( '#WMDE-Banner-Container' );
 		$bannerContainer.html( this.bannerTemplate( this.templateVars ) );
 		$( '#banner-container' ).show();
+		this.localImpressionCount.incrementImpressionCount();
 
 	}
 
@@ -32,7 +38,18 @@ export class CommunityBanner {
 
 	registerClickEvents() {
 		let bannerInstance = this;
-		this.trackingEvents.trackClickEvent( $( '#banner-close-button' ), 'banner-closed', this.bannerCloseTrackRatio );
+
+		this.eventLoggingTracker.bindClickEvent(
+			document.getElementsByClassName( 'banner-wrapper' )[ 0 ],
+			'banner-clicked',
+			BANNER_SEEN_TRACK_RATIO
+		);
+
+		this.eventLoggingTracker.bindClickEvent(
+			document.getElementById( 'banner-close-button' ),
+			'banner-closed',
+			BANNER_CLOSE_TRACK_RATIO
+		);
 
 		$( '.banner-close' ).click( function () {
 			bannerInstance.removeBanner();

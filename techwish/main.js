@@ -1,4 +1,4 @@
-import { getGroupType, getGroupBannerHeadline, getGroupBannerText, GROUP_TYPE_NONE } from '../techwish/getGroupOptions';
+import { getGroupType, getGroupTypeSuffix, getGroupBannerHeadline, getGroupBannerText, GROUP_TYPE_NONE } from '../techwish/getGroupOptions';
 
 require( './css/styles.pcss' );
 require( './css/variables.pcss' );
@@ -6,17 +6,18 @@ require( './css/variables.pcss' );
 import { CommunityBanner } from './CommunityBanner';
 
 $( document ).ready( function () {
-	const bannerName = 'WMDE_techwish_voting_2020_main';
 	const bannerTemplate = require( './templates/banner01.hbs' );
 
-	let groupType = getGroupType(
-		true,
-		true
-	);
+	const bannerElement = document.getElementById( 'WMDE-Banner-Container' );
+	const bannerTrackingName = bannerElement.getAttribute( 'data-tracking' );
+
+	let groupType = getGroupType();
 
 	if ( groupType === GROUP_TYPE_NONE ) {
 		return;
 	}
+
+	const bannerName = bannerTrackingName + '_' + getGroupTypeSuffix( groupType );
 
 	const templateVars = {
 		campaign: bannerName,

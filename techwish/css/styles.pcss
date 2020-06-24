@@ -14,7 +14,6 @@
 		color: var( --banner-color-text );
 		display: flex;
 		flex-flow: row nowrap;
-		min-height: 160px;
 		text-decoration: none;
 		margin-bottom: 1em;
 		&:hover,
@@ -23,54 +22,64 @@
 			color: var( --banner-color-text );
 			text-decoration: none;
 		}
+
+		max-height: 200px;
+
+		/* $breakpoint_tablet 834px banner size */
+		@media ( min-width: 834px ) {
+			max-height: 144px;
+		}
+		/* $breakpoint_desktop 1125px banner size */
+		@media ( min-width: 1350px ) {
+			max-height: 172px;
+		}
+		/* $breakpoint_desktop_large 1920px banner size*/
+		@media ( min-width: 2145px ) {
+			max-height: 192px;
+		}
+
 	}
 	&-logo-wrapper {
 
 		align-items: center;
 		justify-content: center;
+		flex: 1 auto;
 		> img {
-			height: 110px;
-			width: 130px;
+			height: 100%;
 		}
-		padding: 0 10px;
+		margin-right: 35px;
 		text-align: center;
 		display: none;
 
-		/* $breakpoint_tablet */
+		/* $breakpoint_tablet 834px banner size */
 		@media ( min-width: 834px ) {
 			display: flex;
-			width: 190px;
+			min-width: 190px;
 		}
-		/* $breakpoint_desktop */
-		@media ( min-width: 1125px ) {
-			width: 298px;
-			> img {
-				width: 150px;
-			}
+		/* $breakpoint_desktop 1125px banner size */
+		@media ( min-width: 1350px ) {
+			min-width: 298px;
 		}
-		/* $breakpoint_desktop_large */
-		@media ( min-width: 1920px ) {
-			width: 554px;
-			> img {
-				width: 170px;
-			}
+		/* $breakpoint_desktop_large 1920px banner size*/
+		@media ( min-width: 2145px ) {
+			min-width: 554px;
 		}
 	}
 	&-text {
 		&-headline {
-			padding: 0 0 16px;
-			width: 100%;
+			padding: 0 0 8px;
+			max-width: 90%;
 			font-weight: bold;
 			font-size: 16px;
 			font-family: 'Charter Bold BT', 'Times New Roman', serif;
 
-			@media ( min-width: 384px ) {
-				font-size: 19.2px;
-			}
-			@media ( min-width: 1125px ) {
+			/* $breakpoint_desktop 1125px banner size */
+			@media ( min-width: 1350px ) {
 				font-size: 23.04px;
 			}
-			@media ( min-width: 1920px ) {
+
+			/* $breakpoint_desktop_large 1920px banner size*/
+			@media ( min-width: 2145px ) {
 				font-size: 27.65px;
 			}
 		}
@@ -78,11 +87,15 @@
 			width: 100%;
 			font-size: 13.33px;
 			font-family: 'System sans-serif Regular', 'Open sans regular', sans-serif;
-			line-height: 26px;
-			@media ( min-width: 1125px ) {
+			line-height: 21px;
+
+			/* $breakpoint_desktop 1125px banner size */
+			@media ( min-width: 1350px ) {
 				font-size: 16px;
 			}
-			@media ( min-width: 1920px ) {
+
+			/* $breakpoint_desktop_large 1920px banner size*/
+			@media ( min-width: 2145px ) {
 				font-size: 19.2px;
 			}
 		}
@@ -90,7 +103,6 @@
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
-			flex: 1 1 50%;
 			padding: 16px;
 			text-align: left;
 			> span {
@@ -98,29 +110,21 @@
 			}
 		}
 	}
-	&-image-wrapper {
-		display: flex;
-		align-items: center;
-		flex: 1 1 5%;
-		min-width: 125px;
-		justify-content: center;
-		> img {
-			height: 120px;
-			width: 85px;
-		}
-	}
 	&-close {
 		position: absolute;
 		right: 0.2em;
-		top: 0.5em;
+
+		top: 3.8em;
+
 		&-button {
 			position: relative;
-			padding: 6px 9px;
+			padding: 6px 16px;
 			flex: 0 0 auto;
 			right: 0;
-			line-height: 20px;
-			font-size: 32px;
-			font-weight: bold;
+
+			line-height: 28px;
+			font-size: 48px;
+
 			&:before {
 				position: relative;
 				content: '\00d7';
@@ -136,27 +140,53 @@
 		color: var( --banner-color-button-text );
 		font-weight: bold;
 
-		margin-top: 16px;
+		margin-top: 8px;
 		width: 100%;
 		text-align: center;
 		align-self: center;
 		font-size: 13px;
 		padding: 8px 0 8px 0;
 
-		@media ( min-width: 384px ) {
-			margin-top: 24px;
+		/* $breakpoint_mobile_large 384px banner size */
+		@media ( min-width: 577px ) {
+			margin-top: 10px;
 		}
 
+		/* $breakpoint_tablet 834px banner size */
 		@media ( min-width: 834px ) {
-			margin-top: 16px;
+			margin-top: 10px;
 			width: 144px;
 			align-self: flex-start;
-			padding: 8px;
+			padding: 6px;
 		}
 
-		@media ( min-width: 1125px ) {
+		/* $breakpoint_desktop 1125px banner size */
+		@media ( min-width: 1350px ) {
+			margin-top: 16px;
 			font-size: 16px;
 			width: 180px;
+		}
+	}
+}
+
+.skin-vector {
+	.banner-text-headline {
+		width: 100%;
+	}
+	.banner-close {
+		top: 0.5em;
+		&-button{
+			line-height: 18px;
+			font-size: 32px;
+			padding: 6px 9px;
+		}
+	}
+
+	.banner-logo-wrapper {
+		display: none;
+		/* $breakpoint_tablet 834px banner size */
+		@media ( min-width: 1059px ) {
+			display: flex;
 		}
 	}
 }
