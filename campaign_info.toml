@@ -58,5 +58,6 @@ wrapper_template = "wikipedia_org"
 
 [techwish.banners.main]
 filename = "./techwish/main.js"
-pagename = "B18WMDE_techwish_voting_01_190617_main"
+pagename = "B20WMDE_techwish_voting_01_200706_main"
+ #tracking string gets extended with a suffix in the code
 tracking = "WMDE_techwish_voting_2020_main"
