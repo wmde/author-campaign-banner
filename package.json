@@ -33,7 +33,7 @@
     "html-loader": "^0.4.5",
     "jquery": "^3.5.0",
     "minimatch": "^3.0.4",
-    "postcss-custom-properties": "^7.0.0",
+    "postcss-custom-properties": "^10.0.0",
     "postcss-loader": "^2.1.4",
     "postcss-nested": "^2.1.2",
     "style-loader": "^0.18.2",
