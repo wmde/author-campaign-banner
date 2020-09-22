@@ -39,7 +39,7 @@
     "style-loader": "^0.18.2",
     "stylelint": "^13.7.1",
     "stylelint-config-wikimedia": "^0.4.3",
-    "toml": "^2.3.3",
+    "toml": "^3.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url": "^0.11.0",
     "webpack": "^4.43.0",
