@@ -1,10 +1,15 @@
 {
 	"extends": "stylelint-config-wikimedia",
 	"rules": {
-		"selector-max-id": 0,
+		"selector-max-id": 2,
 		"declaration-no-important": null,
-		"function-url-quotes": [ "always" ],
-		"color-hex-length": [ "long" ],
-		"function-url-no-scheme-relative": null
+		"function-url-quotes": "always",
+		"function-url-no-scheme-relative": null,
+		"color-hex-length": "long",
+		"rule-empty-line-before": null,
+		"declaration-block-no-redundant-longhand-properties": null,
+		"at-rule-empty-line-before": null,
+		"declaration-empty-line-before": null,
+		"no-descending-specificity": null
 	}
 }

@@ -23,7 +23,8 @@ if ( !currentUrl.query.devbanner ) {
 } else {
 
 	// inject tracking data for current banner.
-	// In a compiled banner, the tracking data is baked into the data attribute of the container div.
+	// In a compiled banner, the tracking data is baked
+	// into the data attribute of the container div.
 
 	const campaigns = new CampaignConfig( CAMPAIGNS );
 	const pages = campaigns.getConfigForPages();

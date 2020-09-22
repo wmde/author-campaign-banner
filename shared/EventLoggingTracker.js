@@ -8,7 +8,7 @@ export class EventLoggingTracker {
 	/**
 	 * Track a click event on a given element
 	 *
-	 * @param {object} trackedElement The html element to bind the click event to
+	 * @param {Object} trackedElement The html element to bind the click event to
 	 * @param {string} actionName Name of the action to be tracked
 	 * @param {number} trackRatio The probability of the event being tracked (between 0 and 1)
 	 */
@@ -24,7 +24,7 @@ export class EventLoggingTracker {
 	 *
 	 * @param {string} actionName Name of the action to be tracked
 	 * @param {number} trackingRatio The probability of the event being tracked (between 0 and 1)
-	 * @return {function}
+	 * @return {Function}
 	 */
 	createTrackHandler( actionName, trackingRatio ) {
 		if ( typeof trackingRatio === 'undefined' ) {
