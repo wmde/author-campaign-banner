@@ -1,9 +1,9 @@
-const Merge = require( 'webpack-merge' );
+const { merge } = require( 'webpack-merge' );
 const CommonConfig = require( './webpack.common.js' );
 const webpack = require( 'webpack' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 
-module.exports = Merge( CommonConfig, {
+module.exports = merge( CommonConfig, {
 	plugins: [
 		new webpack.LoaderOptionsPlugin( {
 			minimize: true,
