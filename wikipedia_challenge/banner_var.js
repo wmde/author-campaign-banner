@@ -1,17 +1,13 @@
 require( './css/styles.pcss' );
 
 import { BannerNameBuilder } from './BannerNameBuilder';
-import { TestFlag } from './TestFlag';
 import { Banner } from './Banner';
-import { BANNER_CONTAINER_ID, BANNER_ID, BANNER_NAME_ATTRIBUTE, TEST_FLAG_ATTRIBUTE, CLOSE_BUTTON_ID, LINK_BUTTON_ID } from './config';
+import { BANNER_CONTAINER_ID, BANNER_ID, BANNER_NAME_ATTRIBUTE, CLOSE_BUTTON_ID, LINK_BUTTON_ID } from './config';
 
 const BANNER_CLASS_PREFIX = 'challenge-banner-';
-const BANNER_TITLE = 'Im Kosmos von Wikipedia: <span style=\"white-space: nowrap;\">Die 30-Tage-Challenge</span>';
-
+const BANNER_TITLE = 'Im Kosmos von Wikipedia: <span style="white-space: nowrap;">Die 30-Tage-Challenge</span>';
 
 $( document ).ready( () => {
-	const testFlag = new TestFlag( BANNER_CONTAINER_ID, TEST_FLAG_ATTRIBUTE );
-
 	const bannerName = new BannerNameBuilder( BANNER_CONTAINER_ID, BANNER_NAME_ATTRIBUTE )
 		.addDeviceSuffix()
 		.build();
