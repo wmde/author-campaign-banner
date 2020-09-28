@@ -45,20 +45,10 @@ export class Banner {
 	}
 
 	initialise() {
-		if ( this.shouldShowBanner() ) {
-			this.createBanner();
-			this.registerClickEvents();
-			this.registerResizeEvents();
-			this.eventLoggingTracker.trackSeenEvent( BANNER_SEEN_TRACK_RATIO );
-		} else {
-			mw.centralNotice.setBannerLoadedButHidden();
-		}
-	}
-
-	shouldShowBanner() {
-		const pageName = mw.config.get( 'wgPageName' );
-
-		return true;
+		this.createBanner();
+		this.registerClickEvents();
+		this.registerResizeEvents();
+		this.eventLoggingTracker.trackSeenEvent( BANNER_SEEN_TRACK_RATIO );
 	}
 
 	getHTMLElements() {
@@ -77,23 +67,24 @@ export class Banner {
 		this.bannerContainer.innerHTML = this.template( this.templateVars );
 
 		this.getHTMLElements();
-	
 
-		document.body.prepend( document.getElementById( CENTRAL_NOTICE_ID ) );
+		document.body.insertBefore(
+			document.getElementById( CENTRAL_NOTICE_ID ),
+			document.body.childNodes[ 0 ]
+		);
 		this.banner.style.display = 'block';
 		this.localImpressionCount.incrementImpressionCount();
 
 		this.addBannerSpace( this.banner );
 	}
+
 	registerResizeEvents() {
-		var banner = this;
-		window.onresize = function() {
-			//resize the mediawiki-elements
+		const banner = this;
+		window.onresize = function () {
 			banner.addBannerSpace( banner.banner );
-			
-			
-		}
+		};
 	}
+
 	registerClickEvents() {
 		this.eventLoggingTracker.bindClickEvent( this.closeButton, 'banner-closed', BANNER_CLOSE_TRACK_RATIO );
 		this.eventLoggingTracker.bindClickEvent( this.linkButton, 'banner-clicked', BANNER_CLOSE_TRACK_RATIO );
