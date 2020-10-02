@@ -22,8 +22,9 @@ export class LocalImpressionCount {
 		if ( !window.localStorage ) {
 			return 0;
 		}
-		const impressions = window.localStorage.getItem( this.itemName );
+		let impressions = window.localStorage.getItem( this.itemName );
 		if ( impressions === null ) {
+			impressions = 0;
 			window.localStorage.setItem( this.itemName, '0' );
 		}
 		return parseInt( impressions );
