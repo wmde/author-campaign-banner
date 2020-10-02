@@ -1,6 +1,5 @@
 require( './css/styles.pcss' );
 
-import { BannerNameBuilder } from './BannerNameBuilder';
 import { Banner } from './Banner';
 import { BANNER_CONTAINER_ID, BANNER_ID, BANNER_NAME_ATTRIBUTE, CLOSE_BUTTON_ID, LINK_BUTTON_ID } from './config';
 
@@ -8,9 +7,8 @@ const BANNER_CLASS_PREFIX = 'challenge-banner-';
 const BANNER_TITLE = '30 Tage im Kosmos von Wikipedia';
 
 $( document ).ready( () => {
-	const bannerName = new BannerNameBuilder( BANNER_CONTAINER_ID, BANNER_NAME_ATTRIBUTE )
-		.addDeviceSuffix()
-		.build();
+	const bannerElement = document.getElementById( BANNER_CONTAINER_ID );
+	const bannerName = bannerElement.getAttribute( BANNER_NAME_ATTRIBUTE );
 
 	const bannerTemplate = require( './templates/banner.hbs' );
 
