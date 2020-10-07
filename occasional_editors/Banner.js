@@ -110,11 +110,11 @@ export class Banner {
 		} );
 
 		if ( this.editButton !== null ) {
-			this.editButton.addEventListener( 'click', this.removeBanner );
+			this.editButton.addEventListener( 'click', () => this.removeBanner() );
 		}
 
 		for ( let i = 0; i < this.editButtons.length; i++ ) {
-			this.editButtons[ i ].addEventListener( 'click', this.removeBanner );
+			this.editButtons[ i ].addEventListener( 'click', () => this.removeBanner() );
 		}
 	}
 
