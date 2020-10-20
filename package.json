@@ -7,7 +7,7 @@
     "test": "echo 'This package has no tests'",
     "watch": "webpack --watch",
     "build": "webpack --config webpack.production.js",
-    "start": "webpack-dev-server --disable-host-check --host 0.0.0.0",
+    "start": "webpack serve --disable-host-check --host 0.0.0.0",
     "clean": "rm dist/*.js dist/*.wikitext",
     "lint:js": "eslint --cache --cache-location .eslintcache --ignore-path .gitignore .",
     "lint:css": "stylelint --syntax scss '**/*.pcss'"
@@ -45,7 +45,7 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url": "^0.11.0",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
+    "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.2.0"
   },
