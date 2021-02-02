@@ -1,3 +1,14 @@
+# Diversity Campaign
+[diversity]
+campaign_tracking = "WMDE_diversity_winter_2021"
+preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
+wrapper_template = "wikipedia_org"
+
+[diversity.banners.winter]
+filename = "./diversity/banner.js"
+pagename = "B21WMDE_diversity_winter_2021"
+tracking = "WMDE_diversity_winter_2021"
+
 # Authors Campaign
 [authors]
 campaign_tracking = "WMDE_neweditors_autumn_2019"

@@ -1,0 +1,91 @@
+#WMDE-Banner-Container {
+	text-align: left;
+	font-size: 14px;
+	* {
+		box-sizing: border-box;
+	}
+	p {
+		margin: 0;
+	}
+}
+
+.diversity-banner {
+	font-family: 'Roboto', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+	z-index: 101;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #3366cc;
+	background: #ffffff;
+	margin-bottom: 10px;
+
+	&-close {
+		display: block;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		height: 16px;
+		width: 16px;
+		text-align: center;
+		line-height: 16px;
+	}
+
+	&-content {
+		display: flex;
+	}
+
+	&-copy {
+		flex: 1 1 auto;
+		display: flex;
+	}
+
+	&-button {
+		flex: 0 0 166px;
+		width: 166px;
+		padding: 10px 30px 10px 10px;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+	}
+
+	&-image,
+	&-text {
+		padding: 10px;
+	}
+
+	&-image {
+		flex: 0 0 76px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	&-text {
+		flex: 1 1 auto;
+	}
+
+	&-link {
+		font-family: 'Lato', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+		display: block;
+		border: 1px solid #a2a9b1;
+		border-radius: 2px;
+		height: 32px;
+		width: 100%;
+		background: #f8f9fa;
+		text-align: center;
+		line-height: 32px;
+		font-size: 16px;
+		color: #000000;
+		font-weight: bold;
+
+		&:hover,
+		&:focus {
+			border-color: #3366cc;
+			text-decoration: none;
+		}
+
+		&:visited {
+			color: #000000;
+		}
+	}
+}
