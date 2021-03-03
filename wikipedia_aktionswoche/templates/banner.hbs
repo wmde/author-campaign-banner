@@ -1,0 +1,30 @@
+<div id="aktionswoche-banner-container" class="aktionswoche-banner {{ banner }}"
+	style="background-color:{{{ banner_background_color }}};">
+	<div class="aktionswoche-banner-close">
+		<a id="aktionswoche-banner-close-button" href="#" title="Schließen">
+			<div class="aktionswoche-banner-close-button"></div>
+		</a>
+	</div>
+	<a id="aktionswoche-banner-link" href="https://www.wikimedia.de/wikipedia20?campaign={{ campaign }}&wp_user={{ wp_user }}&impression_count={{ impression_count }}">
+		<div class="aktionswoche-banner-inner">
+			<!-- confetti background -->
+			<div class="aktionswoche-banner-illustration" 
+				style="background-image: url( '{{{ banner_illustration_url }}}');">
+				<!-- displayed only on desktop form factor, contains the illustration -->
+			</div>
+			<div class="aktionswoche-banner-wrapper">
+				<div class="aktionswoche-banner-title"
+					style="color:{{{ banner_title_color }}};">
+					<!-- #WikipediaSchreibtGeschichte -->
+					<span style="background-color:{{{ banner_background_color }}};">{{{ banner_title }}}</span>
+				</div>
+				<div class="aktionswoche-banner-banner">
+					<span style="background-color:{{{ banner_background_color }}};">{{{ banner_subtitle }}}</span>
+				</div>
+				<div class="aktionswoche-banner-button">
+					{{{ banner_button_text }}}
+				</div>
+			</div>
+		</div>
+	</a>
+</div>
