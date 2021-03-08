@@ -41,7 +41,6 @@ export class Banner {
 		this.templateVars = templateVars;
 
 		this.localImpressionCount = new LocalImpressionCount( this.name );
-		this.templateVars.impression_count = this.localImpressionCount.getImpressionCount();
 		this.eventLoggingTracker = new EventLoggingTracker( this.name, this.localImpressionCount );
 	}
 
@@ -91,6 +90,9 @@ export class Banner {
 	}
 
 	createBanner() {
+		this.localImpressionCount.incrementImpressionCount();
+		this.templateVars.impression_count = this.localImpressionCount.getImpressionCount();
+
 		this.bannerContainer = document.getElementById( BANNER_CONTAINER_ID );
 		this.bannerContainer.innerHTML = this.template( this.templateVars );
 
@@ -98,7 +100,6 @@ export class Banner {
 
 		document.body.prepend( document.getElementById( CENTRAL_NOTICE_ID ) );
 		this.banner.style.display = 'block';
-		this.localImpressionCount.incrementImpressionCount();
 	}
 
 	registerResizeEvents() {
