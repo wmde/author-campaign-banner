@@ -6,13 +6,13 @@ wrapper_template = "wikipedia_org"
 
 [aktionswoche.banners.ctrl]
 filename = "./wikipedia_aktionswoche/banner_ctrl.js"
-pagename = "B20WMDE_aktionswoche_spring2021_ctrl"
+pagename = "B21WMDE_wp20_aw_b2_desktop"
 tracking = "WMDE_wp20_aw_b2_desktop"
 
 [aktionswoche.banners.var]
 filename = "./wikipedia_aktionswoche/banner_var.js"
-pagename = "B20WMDE_aktionswoche_spring2021_var"
-tracking = "WMDE_wp20_aw_b2_desktop_var"
+pagename = "B21WMDE_wp20_aw_b1_desktop"
+tracking = "WMDE_wp20_aw_b1_desktop"
 
 [aktionswoche_mobile]
 campaign_tracking = "WMDE_wp20_aw"
@@ -21,13 +21,28 @@ wrapper_template = "wikipedia_org"
 
 [aktionswoche_mobile.banners.ctrl]
 filename = "./wikipedia_aktionswoche/banner_ctrl.js"
-pagename = "B20WMDE_aktionswoche_spring2021_ctrl_m"
+pagename = "B21WMDE_wp20_aw_b2_mobile"
 tracking = "WMDE_wp20_aw_b2_mobile"
 
 [aktionswoche_mobile.banners.var]
 filename = "./wikipedia_aktionswoche/banner_var.js"
-pagename = "B20WMDE_aktionswoche_spring2021_var_m"
-tracking = "WMDE_wp20_aw_b2_mobile_var"
+pagename = "B21WMDE_wp20_aw_b1_mobile"
+tracking = "WMDE_wp20_aw_b1_mobile"
+
+[aktionswoche_ipad]
+campaign_tracking = "WMDE_wp20_aw"
+preview_link = "/wiki/Wikipedia:Hauptseite?useskin=Minerva&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"
+wrapper_template = "wikipedia_org"
+
+[aktionswoche_ipad.banners.ctrl]
+filename = "./wikipedia_aktionswoche/banner_ctrl.js"
+pagename = "B21WMDE_wp20_aw_b2_ipad"
+tracking = "WMDE_wp20_aw_b2_ipad"
+
+[aktionswoche_ipad.banners.var]
+filename = "./wikipedia_aktionswoche/banner_var.js"
+pagename = "B21WMDE_wp20_aw_b1_ipad"
+tracking = "WMDE_wp20_aw_b1_ipad"
 
 # Wikipedia-Challenge
 [challenge]
