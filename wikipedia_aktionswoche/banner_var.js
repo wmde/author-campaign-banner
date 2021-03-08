@@ -27,7 +27,7 @@ $( document ).ready( () => {
 	const bannerTemplate = require( './templates/banner.hbs' );
 
 	const templateVars = {
-		campaign: bannerName,
+		keyword: bannerName,
 		banner: BANNER_CLASS_PREFIX,
 		banner_title: BANNER_TITLE,
 		banner_subtitle: BANNER_SUBTITLE,
