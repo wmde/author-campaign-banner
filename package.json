@@ -23,7 +23,7 @@
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-transform-object-assign": "^7.12.13",
     "@babel/preset-env": "^7.13.9",
-    "autoprefixer": "^10.2.4",
+    "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
     "core-js": "^3.9.1",
     "css-loader": "^5.1.1",
