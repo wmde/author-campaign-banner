@@ -94,13 +94,18 @@
 		z-index: 1002;
 		width: 20px;
 		height: 20px;
-		right: 18px;
-		top: 20px;
+		right: 0;
+		top: 0;
+		margin: 20px;
 
 		a {
 			display: inline-block;
 			width: 20px;
 			height: 20px;
+			position: absolute;
+			top: -20px;
+			left: -20px;
+			padding: 20px;
 		}
 	}
 }
@@ -257,8 +262,6 @@
 		&-close {
 			width: 25px;
 			height: 25px;
-			right: 20px;
-			top: 20px;
 
 			a {
 				display: inline-block;
@@ -351,11 +354,6 @@
 			padding-top: 8px;
 			padding-bottom: 8px;
 			margin-top: 0;
-		}
-
-		&-close {
-			right: 20px;
-			top: 20px;
 		}
 	}
 }
