@@ -1,0 +1,359 @@
+:root {
+	--banner-color-primary: #ee8019;
+	--banner-color-secondary: #ffffff;
+	--banner-color-outline: #919191;
+	--banner-color-black: #000000;
+	--banner-color-white: #ffffff;
+	--banner-color-blue: #014acf;
+}
+
+.aktionswoche-banner {
+	font-family: 'Helvetica', sans-serif;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	z-index: 101;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	display: none;
+	position: relative;
+
+	.mobile-break {
+		display: block;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	&-inner {
+		box-sizing: border-box;
+		height: 100%;
+		text-align: left;
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		background-size: cover;
+		background-position: top left;
+		background-repeat: repeat;
+	}
+
+	&-illustration {
+		width: 27vw;
+		height: 27vw;
+		margin-top: 12px;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	&-wrapper {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&-title {
+		padding-top: 11px;
+		font-size: 5.3vw;
+		line-height: 22px;
+		letter-spacing: 0.5px;
+	}
+
+	&-banner {
+		color: var( --banner-color-black );
+		width: 70%;
+		margin-top: 24px;
+		font-size: 4.6vw;
+		line-height: 28px;
+		letter-spacing: 0.5px;
+	}
+
+	&-button {
+		background-color: var( --banner-color-white );
+		color: var( --banner-color-blue );
+		padding: 8px 7px 8px 8px;
+		margin-top: 44px;
+		text-align: center;
+		font-size: 7.8vw;
+		line-height: 30px;
+		display: inline-block;
+		margin-bottom: 40px;
+		border-radius: 5px;
+	}
+
+	&-close {
+		background: transparent url( '//upload.wikimedia.org/wikipedia/commons/5/5e/Icon_ionic-md-close-1%402x.png' ) no-repeat center/60%;
+		background-size: cover;
+		cursor: pointer;
+		position: absolute;
+		z-index: 1002;
+		width: 20px;
+		height: 20px;
+		right: 0;
+		top: 0;
+		margin: 20px;
+
+		a {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: -20px;
+			left: -20px;
+			padding: 20px;
+		}
+	}
+}
+
+@media ( max-width: 319px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/6/6f/Neu-confetti-actionweek500x575.png' );
+		}
+	}
+}
+
+@media ( min-width: 320px ) and ( max-width: 479px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/6/6f/Neu-confetti-actionweek500x575.png' );
+		}
+	}
+}
+
+@media ( min-width: 480px ) and ( max-width: 599px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/6/6f/Neu-confetti-actionweek500x575.png' );
+		}
+	}
+}
+
+@media ( min-width: 600px ) and ( max-width: 699px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/2/2c/Neu-confetti-actionweek600x269.png' );
+		}
+	}
+}
+
+@media ( min-width: 700px ) and ( max-width: 869px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/b/bf/Neu-confetti-actionweek800x280.png' );
+		}
+	}
+}
+
+@media ( min-width: 870px ) and ( max-width: 969px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/0/06/Neu-confetti-actionweek930x228.png' );
+		}
+	}
+}
+
+@media ( min-width: 970px ) and ( max-width: 1099px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/2/22/Neu-confetti-actionweek1000x280.png' );
+		}
+	}
+}
+
+@media ( min-width: 1100px ) and ( max-width: 1199px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/d/dd/Neu-confetti-actionweek1180x253.png' );
+		}
+	}
+}
+
+@media ( min-width: 1200px ) and ( max-width: 1349px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: unset;
+		}
+
+		&-wrapper {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/a/af/Neu-confetti-actionweek1200x245.png' );
+		}
+	}
+}
+
+@media ( min-width: 1350px ) {
+	.aktionswoche-banner {
+		&-inner {
+			background-image: unset;
+		}
+
+		&-wrapper {
+			background-image: url( '//upload.wikimedia.org/wikipedia/commons/4/4b/Neu-confetti-actionweek1400x260.png' );
+		}
+	}
+}
+
+@media ( min-width: 480px ) and ( max-width: 599px ) {
+	.aktionswoche-banner {
+		&-title {
+			font-size: 26px;
+		}
+
+		&-banner {
+			font-size: 22px;
+		}
+
+		&-button {
+			font-size: 37px;
+		}
+
+		&-illustration {
+			width: 130px;
+			width: 130px;
+		}
+	}
+}
+
+@media ( min-width: 600px ) {
+	.aktionswoche-banner {
+
+		&-inner {
+			background-size: cover;
+			background-position: top left;
+			display: block;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		&-illustration {
+			display: none;
+		}
+
+		&-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&-title {
+			padding-top: 50px;
+			font-size: 5vw;
+			line-height: 120%;
+		}
+
+		&-banner {
+			margin-top: 20px;
+			font-size: 3.3vw;
+			line-height: 140%;
+			width: 60%;
+		}
+
+		&-button {
+			margin-top: 30px;
+			font-size: 4.2vw;
+			margin-bottom: 38px;
+		}
+
+		&-close {
+			width: 25px;
+			height: 25px;
+
+			a {
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+
+	.skin-minerva {
+		.aktionswoche-banner {
+			&-text {
+				width: auto;
+			}
+		}
+	}
+}
+
+@supports ( -moz-user-select:unset ) {
+	@media ( min-width: 930px ) and ( max-width: 946px ) {
+		.aktionswoche-banner {
+			&-button {
+				margin-top: 29px;
+			}
+		}
+	}
+}
+
+@media ( min-width: 700px ) and ( max-width: 1199px ) {
+	.aktionswoche-banner {
+		&-title {
+			font-size: 35px;
+		}
+
+		&-banner {
+			font-size: 23px;
+		}
+
+		&-button {
+			font-size: 30px;
+		}
+	}
+}
+
+@media ( min-width: 1200px ) {
+	.aktionswoche-banner {
+
+		&-inner {
+			background-image: unset;
+			background-size: contain;
+			background-repeat: repeat;
+			display: flex;
+			flex-direction: row;
+			padding-top: 0;
+			padding-bottom: 0;
+			padding-left: 28px;
+		}
+
+		&-illustration {
+			display: inline;
+			width: 20%;
+			height: 210px;
+			margin-top: unset;
+		}
+
+		&-wrapper {
+			background-size: cover;
+			background-position: top left;
+			background-repeat: repeat;
+			width: 80%;
+			padding-right: 100px;
+		}
+
+		&-title {
+			margin-top: 10px;
+			padding-top: 35px;
+			font-size: 2.5vw;
+		}
+
+		&-banner {
+			margin-top: 20px;
+			margin-bottom: 36px;
+			font-size: 1.7vw;
+			width: 100%;
+		}
+
+		&-button {
+			font-size: 2.1vw;
+			margin-bottom: 29px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			margin-top: 0;
+		}
+	}
+}
